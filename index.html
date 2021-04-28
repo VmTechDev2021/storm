@@ -1,1 +1,41 @@
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
+
+		<title>Início</title>
+
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	</head>
+	<style>
+body {
+    font-family: 'Quicksand';font-size: 22px;
+}
+</style>
+	<body>
+<img src='https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light'
+/>
+<script>
+
+  window.watsonAssistantChatOptions = {
+      integrationID: "a159b5c6-28f2-4936-be91-4d6748451b71", // The ID of this integration.
+      region: "us-south", // The region your integration is hosted in.
+      serviceInstanceID: "8e26dd74-085a-475c-913d-a3d6bd47d3aa", // The ID of your service instance.
+
+    onLoad: function(instance) {
+	instance.updateCSSVariables({
+  'BASE-font-family': '"Quicksand", Times, serif',
+	});
+      instance.render(); instance.openWindow()
+    }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+	</body>
+</html>
