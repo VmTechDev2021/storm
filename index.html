@@ -22,14 +22,17 @@ body {
       integrationID: "a159b5c6-28f2-4936-be91-4d6748451b71", // The ID of this integration.
       region: "us-south", // The region your integration is hosted in.
       serviceInstanceID: "8e26dd74-085a-475c-913d-a3d6bd47d3aa", // The ID of your service instance.
+      hideCloseButton: true,
 
     onLoad: function(instance) {
 	instance.updateCSSVariables({
   'BASE-font-family': '"Quicksand", Times, serif',
 	});
-      instance.render(); instance.openWindow()
-    }
+      instance.render(); instance.openWindow(); 
+	  }
+	
   };
+
   setTimeout(function(){
     const t=document.createElement('script');
     t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
