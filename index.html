@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
-
-		<title>Aprendendo Watson</title>
-
-		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-	</head>
-	<style>
-body {
-    font-family: 'Quicksand';font-size: 22px;
-}
+<style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #00c1db;
 		font-family: "Comic Sans MS", sans-serif;
@@ -21,34 +7,6 @@ body {
 		outline: 1px solid #00c1db;
 	}
 </style>
-	<body>
-
-<script>
-
-  window.watsonAssistantChatOptions = {
-      integrationID: "b0ea6a5c-527a-4b70-a04c-984c74fd6cf7", // The ID of this integration.
-      region: "us-south", // The region your integration is hosted in.
-      serviceInstanceID: "8e26dd74-085a-475c-913d-a3d6bd47d3aa", // The ID of your service instance..
-      hideCloseButton: true,
-
-    onLoad: function(instance) {
-	instance.updateCSSVariables({
-  'BASE-font-family': '"Quicksand", Times, serif',
-	});
-	instance.updateLocale('pt-br').then(function() {
-  instance.render(); instance.openWindow(); 
-	});
-    
-	  }
-	
-  };
-
-  setTimeout(function(){
-    const t=document.createElement('script');
-    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
-    document.head.appendChild(t);
-  });
-</script>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
@@ -102,9 +60,3 @@ body {
 		initESW('https://service.force.com');
 	}
 </script>
-	</body>
-</html>
-
-
-
-
