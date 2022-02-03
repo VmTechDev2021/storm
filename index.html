@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
 
-		<title>SMB - Einstein - 5</title>
+		<title>SMB - Einstein</title>
 
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 	</head>
@@ -24,11 +24,12 @@
 	}
 </style>
 
+
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = true; //Ou falso
-		embedded_svc.settings.language = 'pt-BR'; //Por exemplo, insira "pt" ou "pt-BR"
+		embedded_svc.settings.language = ''; //Por exemplo, insira "pt" ou "pt-BR"
 
 		//embedded_svc.settings.defaultMinimizedText = '...'; //(Assume como padrão o Chat com um especialista)
 		//embedded_svc.settings.disabledMinimizedText = '...'; //(Assume como padrão Agente off-line)
@@ -60,7 +61,7 @@
 				buttonId: '5733t0000000Ncv',
 				baseLiveAgentURL: 'https://d.la1-c1-ia5.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'Bot_Agents',
-				isOfflineSupportEnabled: true
+				isOfflineSupportEnabled: false
 			}
 		);
 	};
