@@ -1,0 +1,16 @@
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "teste.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vitor",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "mongodb": "^4.6.0",
+    "qs": "^6.10.3"
+  }
+}
