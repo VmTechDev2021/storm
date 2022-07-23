@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
 
-		<title>SMB - Einstein 60v</title>
+		<title>Blaze - API</title>
 
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 	</head>
@@ -14,68 +14,37 @@
 
 
 <body>
-<style type='text/css'>
-	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #00c1db;
-		font-family: "Palatino Linotype", sans-serif;
-	}
-	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #00c1db;
-	}
-</style>
 
 
-<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+
+
 <script type='text/javascript'>
-	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Ou falso
-		embedded_svc.settings.language = 'pt'; //Por exemplo, insira "pt" ou "pt-BR"
+	const axios = require('axios')
 
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Assume como padrão o Chat com um especialista)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Assume como padrão Agente off-line)
+const main = async() => {
 
-		//embedded_svc.settings.loadingText = ''; //(Assume como padrão Carregando)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Define o domínio de sua implantação para que seus visitantes possam navegar em subdomínios durante uma sessão de chat)
+    let data = {}
+    const payload = {
+        method: 'GET',
+        url: `https://api-v2.blaze.com/roulette_games/recent`,
+        
+    }
 
-		// Configurações para Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Define o preenchimento automático de campos de formulário de pré-chat
-		//embedded_svc.settings.fallbackRouting = []; //Uma matriz de IDs de botão, IDs de usuário ou userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Padronizado para Entre em contato conosco)
+    await axios(payload)
+    .then((response) => {
+        data = response.data
+        
 
-		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-		embedded_svc.settings.entryFeature = 'LiveAgent';
+    }).catch(error => {
+        data.err = error.message
+        console.log('Error', error.message, error.stack)
+    })
+    
+    console.log(data)
+    return {data}
+}
 
-		embedded_svc.init(
-			'https://conexasaude.my.salesforce.com',
-			'https://psicologiaviva.secure.force.com/liveAgentSetupFlow',
-			gslbBaseURL,
-			'00D3t000001N6JC',
-			'Bot_Agents',
-			{
-				baseLiveAgentContentURL: 'https://c.la1-c1-ia5.salesforceliveagent.com/content',
-				deploymentId: '5723t0000000N5M',
-				buttonId: '5733t0000000Ncv',
-				baseLiveAgentURL: 'https://d.la1-c1-ia5.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'Bot_Agents',
-				isOfflineSupportEnabled: false
-			}
-		);
-	};
-
-	if (!window.embedded_svc) {
-		var s = document.createElement('script');
-		s.setAttribute('src', 'https://conexasaude.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-		s.onload = function() {
-			initESW(null);
-		};
-		document.body.appendChild(s);
-	} else {
-		initESW('https://service.force.com');
-	}
+main()
 </script>
 	</body>
 </html>
