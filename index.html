@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
 
-		<title>Blaze - API4</title>
+		<title>Blaze - API7</title>
 
 		
 	</head>
@@ -19,33 +19,35 @@
 
 
 <script type="module">
-	//const axios = require('axios')
-	import axios from 'axios';
+	async function blaze (request, response){
+    const axios = require('axios')
+   
 
-const main = async() => {
-
-    let data = {}
-    const payload = {
-        method: 'GET',
-        url: `https://api-v2.blaze.com/roulette_games/recent`,
-        
-    }
-
-    await axios(payload)
-    .then((response) => {
-        data = response.data
-        
-
-    }).catch(error => {
-        data.err = error.message
-        console.log('Error', error.message, error.stack)
-    })
+let data = {}
+const payload = {
+    method: 'GET',
+    url: `https://api-v2.blaze.com/roulette_games/recent`,
     
-    console.log(data)
-    return {data}
 }
 
-main()
+await axios(payload)
+.then((response) => {
+    data = response.data
+    
+
+}).catch(error => {
+    data.err = error.message
+    console.log('Error', error.message, error.stack)
+})
+
+response.json({
+    data
+});
+    
+    
+    }
+    
+    export default blaze;
 </script>
 	</body>
 </html>
